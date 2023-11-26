@@ -20,8 +20,9 @@ def FogSettingsDataBlock_Apply_Settings(path_input:str, path_output:str):
     if not os.path.exists(path_output):
         os.mkdir(path_output)
         
-    path_input = os.path.join(path_input, 'GameData_FogSettingsDataBlock')
     for file in os.listdir(path_input):
+        if file == 'FogSettingsDataBlock.py' or file == 'output':
+            continue
         with open(os.path.join(path_input, file)) as data:
             data = data.read()
             infectious = data.find('"Infection": 0.0,')
@@ -36,8 +37,7 @@ def FogSettingsDataBlock_Apply_Settings(path_input:str, path_output:str):
             with open(os.path.join(path_output, file), 'w') as new:
                 new.write(data)
 
-path_root   = os.getcwd()
-path_input  = path_root + '\input'
-path_output = path_root + '\output'
+path_input  = os.getcwd()
+path_output = path_input + '\output'
 
 FogSettingsDataBlock_Apply_Settings(path_input, path_output)

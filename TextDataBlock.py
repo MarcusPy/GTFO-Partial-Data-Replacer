@@ -43,6 +43,8 @@ def TextDataBlock_Apply_Settings(path_input:str, path_output:str):
         os.mkdir(path_output)
 
     for file in os.listdir(path_input):
+        if file == 'TextDataBlock.py' or file == 'output':
+            continue
         pid = re.search('[0-9]+', file)
         if pid.group() in keys:
             with open(os.path.join(path_input, file), encoding='utf-8') as data:
@@ -53,8 +55,7 @@ def TextDataBlock_Apply_Settings(path_input:str, path_output:str):
                 with open(os.path.join(path_output, file), 'w', encoding='utf-8') as new:
                     new.write(data)
 
-path_root   = os.getcwd()
-path_input  = path_root + '\input'
-path_output = path_root + '\output'
+path_input  = os.getcwd()
+path_output = path_input + '\output'
 
 TextDataBlock_Apply_Settings(path_input, path_output)
