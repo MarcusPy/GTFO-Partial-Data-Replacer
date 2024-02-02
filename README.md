@@ -4,4 +4,4 @@ Fog - used to replace data within FogSettingsDataBlock files recursively, distin
 
 wem - used to move (thus prevent from playing in game) unwanted sound files to a backup folder
 
-DataBlock scripts will only work if the files have been generated using FullPartialData setting in MTFO
+Warning - DataBlock scripts will only work if the files have been generated using FullPartialData setting in MTFO
