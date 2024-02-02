@@ -18,14 +18,14 @@ to_move = [
 ]
 
 try:
-    os.mkdir(cwd + '\wem_backup')
+    os.mkdir(cwd + '\\wem_backup')
 except FileExistsError:
     pass
 
 done = 0
 for file in to_move:
     try:
-        shutil.move(cwd + '\\' + file + '.wem', cwd + '\wem_backup')
+        shutil.move(cwd + '\\' + file + '.wem', cwd + '\\wem_backup')
         done += 1
     except:
         continue
