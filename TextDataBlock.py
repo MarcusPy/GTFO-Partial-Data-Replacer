@@ -56,6 +56,6 @@ def TextDataBlock_Apply_Settings(path_input:str, path_output:str):
                     new.write(data)
 
 path_input  = os.getcwd()
-path_output = path_input + '\output'
+path_output = path_input + '\\output'
 
 TextDataBlock_Apply_Settings(path_input, path_output)
